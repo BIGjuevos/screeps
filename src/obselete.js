@@ -191,6 +191,8 @@ module.exports = function(creeps) {
             };
         };
 
+        console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
         // Delete creeps from Memory
         var safe = true;
         for(var i in Game.spawns){ if(Game.spawns.spawning){ safe=false; }; };
@@ -217,12 +219,13 @@ module.exports = function(creeps) {
                     if(source.lair){ continue; };
                     var count = 0;
                     for(var creep in Game.creeps) {if(Memory.creeps[Game.creeps[creep].name].target && Memory.creeps[Game.creeps[creep].name].target == id) {count++;};};
+                    // don't let there be more than double the miners than transports
                     if(countMiners<1) {console.log("Create m1ner:",Game.spawns[i].createCreep([MOVE, WORK], "miner"+getID(), {role: "miner", target: id }));};
                     if(count<source.spots) {console.log("Create m2ner:",Game.spawns[i].createCreep([MOVE, WORK, WORK], "miner"+getID(), {role: "miner", target: id }));};
                 };
                 if(countMiners>1 && countTrans<7 && countTransAll < _.size(Game.spawns)*8) {console.log("Create Trans:",Game.spawns[i].createCreep([MOVE, MOVE, MOVE, CARRY, CARRY, CARRY], "trans"+getID(), {role: "trans", target:false}));};
                 if(countMiners>1 && Memory.rooms[spawn.room.name].contr && countContr<Memory.rooms[spawn.room.name].contr[spawn.room.controller.id].spots.length) {console.log("Create Contr:",Game.spawns[i].createCreep([MOVE, CARRY, WORK, WORK], "contr"+getID(), {role: "contr", target: contr }));};
-                if(countTrans==0) {console.log("Create Trans:",Game.spawns[i].createCreep([MOVE, CARRY], "trans"+getID(), {role: "trans", target:false}));};
+                console.log("remaining spots: " + source.spots);
             };
         };
         for(var i in Game.creeps) {
