@@ -1,8 +1,17 @@
 module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-screeps');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'src',
+                src: '**',
+                dest: 'dist/'
+            }
+        },
         screeps: {
             options: {
                 email: 'ryan.null@gmail.com',
@@ -15,4 +24,4 @@ module.exports = function(grunt) {
             }
         }
     });
-}
+};

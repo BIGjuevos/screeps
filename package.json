@@ -4,10 +4,10 @@
   "private": true,
   "description": "",
   "main": "main.js",
-  "dependencies": {
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-screeps": "^1.2.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "tap test/*.js"
   },
