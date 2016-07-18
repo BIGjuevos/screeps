@@ -1,0 +1,24 @@
+{
+  "name": "screeps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "grunt-screeps": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BIGjuevos/screeps.git"
+  },
+  "author": "Ryan Null <ryan.null@gmail.com> (http://ryannull.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BIGjuevos/screeps/issues"
+  },
+  "homepage": "https://github.com/BIGjuevos/screeps#readme"
+}
