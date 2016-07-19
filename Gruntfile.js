@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 expand: true,
-                cwd: 'src',
+                cwd: 'src2',
                 src: '**',
                 dest: 'dist/'
             }
